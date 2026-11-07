@@ -1,4 +1,4 @@
-# Hello, this is a replay parser for Guilty Gear XX Accent Core +R.
+# Hello, this is a replay parser for Guilty Gear XX AC +R.
 
 Table of contents:
 - [Quick summery](#quick-summary)
