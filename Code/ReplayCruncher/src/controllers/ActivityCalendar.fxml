@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="230.0" prefWidth="820" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ActivityCalendar">
+   <children>
+      <VBox spacing="8" AnchorPane.topAnchor="12.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <HBox alignment="CENTER" spacing="20">
+            <Button mnemonicParsing="false" onAction="#handlePrevYear" text="&lt;" />
+            <Label fx:id="lblYear" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+            <Button mnemonicParsing="false" onAction="#handleNextYear" text="&gt;" />
+         </HBox>
+         <Pane fx:id="monthLabelsBox" prefHeight="15" />
+         <HBox spacing="0">
+            <VBox fx:id="dayLabelsBox" spacing="1" minWidth="35" prefWidth="35" />
+            <GridPane fx:id="gridCalendar" hgap="2" vgap="2" />
+         </HBox>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReplayList">
+   <children>
+      <GridPane fx:id="gridAsChar" alignment="CENTER" layoutX="15.0" layoutY="3.0" prefHeight="90.0" prefWidth="108.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="41.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="64.0" prefWidth="64.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="13.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="62.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text fx:id="txtAs" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="matchup-text" text="As" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="imgAsChar" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="gridVsChar" alignment="CENTER" layoutX="15.0" layoutY="3.0" prefHeight="90.0" prefWidth="147.0" visible="false">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="64.0" minWidth="10.0" prefWidth="64.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="31.0" minWidth="4.0" prefWidth="31.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="64.0" minWidth="10.0" prefWidth="64.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="64.0" prefHeight="64.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+	      <ImageView fx:id="imgYou" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+	      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="matchup-text" text="vs" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+	      <ImageView fx:id="imgOpp" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="gridStats" layoutX="177.0" layoutY="26.0" prefHeight="45.0" prefWidth="96.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="51.0" />
+          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="49.0" minWidth="10.0" prefWidth="45.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text fx:id="txtWins" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="matchup-text" text="Wins: " />
+            <Text fx:id="txtTotal" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="matchup-text" text="Total: " GridPane.rowIndex="1" />
+            <Text fx:id="txtWinrate" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="matchup-text" text="Win rate: " GridPane.rowIndex="2" />
+            <Text fx:id="txtWinsSum" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="matchup-text" text="0" GridPane.columnIndex="1" />
+            <Text fx:id="txtTotalSum" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="matchup-text" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Text fx:id="txtWinrateSum" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="matchup-text" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+	      <PieChart fx:id="pieWinLoss" labelsVisible="false" layoutX="259.0" legendVisible="false" minHeight="96.0" minWidth="96.0" prefHeight="96.0" prefWidth="96.0" />
+      <CheckBox fx:id="cbAll" layoutX="353.0" layoutY="76.0" mnemonicParsing="false" />
+      <TableView fx:id="tblChars" layoutX="15.0" layoutY="99.0" prefHeight="430.0" prefWidth="390.0" visible="false" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="100.0">
+        <columns>
+          <TableColumn fx:id="colMatchupPlayer" prefWidth="140.0" text="Player" />
+          <TableColumn fx:id="colMatchupWins" prefWidth="55.0" text="Wins" />
+          <TableColumn fx:id="colMatchupTotal" prefWidth="55.0" text="Total" />
+          <TableColumn fx:id="colMatchupWinrate" prefWidth="72.0" text="Win rate" />
+          <TableColumn fx:id="colMatchupInclude" prefWidth="46.0" text="Include" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tblReplays" layoutX="15.0" layoutY="6.0" prefHeight="524.0" prefWidth="648.0" visible="false" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="6.0">
+        <columns>
+          <TableColumn fx:id="colDate" prefWidth="130.0" text="Date" />
+          <TableColumn fx:id="colMatchup" prefWidth="100.0" text="Matchup" />
+          <TableColumn fx:id="colOpponent" prefWidth="100.0" text="Opponent" visible="false" />
+          <TableColumn fx:id="colPlayer1" prefWidth="100.0" text="Player 1" />
+		  <TableColumn fx:id="colPlayer2" prefWidth="100.0" text="Player 2" />
+          <TableColumn fx:id="colWinner" prefWidth="80.0" text="Winner" />
+          <TableColumn fx:id="colVersion" prefWidth="50.0" text="Ver" />
+          <TableColumn fx:id="colFlag" prefWidth="90.0" text="Flag" />
+          <TableColumn fx:id="colOutdated" prefWidth="70.0" text="Outdated" />
+          <TableColumn fx:id="colOpen" prefWidth="100.0" text="Open" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tbAllMachups" layoutX="15.0" layoutY="100.0" prefHeight="430.0" prefWidth="390.0" visible="false" AnchorPane.bottomAnchor="23.0" AnchorPane.topAnchor="100.0">
+        <columns>
+          <TableColumn fx:id="colAllMatchupOpponent" prefWidth="120.0" text="Opponent" />
+          <TableColumn fx:id="colAllMatchupChar" prefWidth="55.0" text="Char" />
+          <TableColumn fx:id="colAllMatchupWins" prefWidth="55.0" text="Wins" />
+          <TableColumn fx:id="colAllMatchupTotal" prefWidth="55.0" text="Total" />
+          <TableColumn fx:id="colAllMatchupWinrate" prefWidth="72.0" text="Win rate" />
+        </columns>
+      </TableView>
+            <Spinner fx:id="spinnerGamesLimit" layoutX="342.0" layoutY="72.0" prefHeight="25.0" prefWidth="64.0" visible="false" />
+      <Text fx:id="txtMinMatch" layoutX="339.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="matchup-text" text="Min. matches" />
+   </children>
+</AnchorPane>

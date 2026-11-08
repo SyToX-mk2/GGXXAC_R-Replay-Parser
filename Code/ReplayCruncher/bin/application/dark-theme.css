@@ -1,0 +1,155 @@
+.root {
+    -fx-base: #1e1e1e;
+    -fx-background: #2b2b2b;
+    -fx-control-inner-background: #3c3c3c;
+    -fx-text-fill: #e0e0e0;
+    
+    -my-text-primary: #e0e0e0;
+    -my-text-secondary: #a0a0a0;
+    -my-bg-pane: #3c3c3c;
+    -my-calendar-cell-bg: #333333;
+	
+	-fx-focus-color: #db272a;           /* Focus ring color */
+	-fx-faint-focus-color: #db272a22;   /* Faint glow (with alpha) */
+}
+
+.activity-calendar-cell {
+	-fx-background-color: #333333;
+	-fx-background-radius: 2;
+}
+
+.activity-calendar-cell-active:hover {
+    -fx-effect: dropshadow(two-pass-box, -fx-focus-color, 8, 0.6, 0, 0),
+                dropshadow(two-pass-box, -fx-faint-focus-color, 14, 0.3, 0, 0);
+    -fx-cursor: hand;
+}
+
+.pie-chart-container {
+    -fx-background-color: #3c3c3c;
+}
+.pie-slice-win {-fx-pie-color: #3bc429;}
+.pie-slice-win:hover {-fx-effect: dropshadow(two-pass-box, -fx-focus-color, 8, 0.6, 0, 0),
+                				  dropshadow(two-pass-box, -fx-faint-focus-color, 14, 0.3, 0, 0);}
+
+.pie-slice-loss {-fx-pie-color: #c42929;}
+.pie-slice-loss:hover {-fx-effect: dropshadow(two-pass-box, -fx-focus-color, 8, 0.6, 0, 0),
+                				   dropshadow(two-pass-box, -fx-faint-focus-color, 14, 0.3, 0, 0);}
+
+.table-view {
+    -fx-background-color: #2b2b2b;
+}
+
+.table-row-cell {
+    -fx-background-color: #2b2b2b;
+    -fx-text-fill: #e0e0e0;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #333333;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #4a4a4a;
+}
+
+.list-cell {
+    -fx-background-color: #2b2b2b;
+    -fx-text-fill: #e0e0e0;
+}
+
+.list-cell:odd {
+    -fx-background-color: #333333;
+}
+
+.text-field {
+    -fx-background-color: #3c3c3c;
+    -fx-text-fill: #e0e0e0;
+    -fx-prompt-text-fill: #808080;
+}
+
+.date-picker-popup > .month-year-pane > .spinner > .button {
+	-fx-text-fill: #e0e0e0;
+    -fx-background-color: #e0e0e0;
+}
+
+.date-cell {
+    -fx-background-color: #c6c6c6;
+    -fx-text-fill: #515151;
+}
+.date-picker-popup > .calendar-grid > .day-name-cell {
+	-fx-background-color: #e0e0e0;
+}
+
+.date-cell.previous-month,
+.date-cell.next-month {
+    -fx-text-fill: #e0e0e0;
+	-fx-background-color: #777777;
+}
+
+.date-picker > .text-field {
+    -fx-background-color: #3c3c3c;
+    -fx-text-fill: #e0e0e0;
+}
+
+.date-picker-popup {
+    -fx-background-color: #2b2b2b;
+}
+
+.date-cell:hover {
+    -fx-background-color: #bf354a;
+	-fx-text-fill: #e0e0e0;
+}
+.date-cell:selected {
+    -fx-background-color: #bf354a;
+}
+
+.player-name {
+    -fx-fill: #e0e0e0;
+    -fx-font-weight: bold;
+}
+
+.player-aliases {
+    -fx-fill: #a0a0a0;
+}
+
+.player-steamid {
+    -fx-fill: #b0b0b0;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+}
+
+.matchup-text {
+    -fx-fill: #e0e0e0;
+}
+
+.matchup-text-bold {
+    -fx-fill: #e0e0e0;
+    -fx-font-weight: bold;
+}
+
+.spec-matchup-text-bold {
+	-fx-font-size: 10pt;
+    -fx-fill: #e0e0e0;
+    -fx-font-weight: bold;
+}
+
+.table-view:focused {
+    -fx-focus-color: #db272a;
+}
+.table-view {
+    -fx-border-color: #555555;
+}
+
+.table-cell {
+    -fx-border-color: transparent #555555 transparent transparent;
+    -fx-border-width: 0 1 0 0;
+}
+
+.flag-text {
+    -fx-fill: #e22828;
+    -fx-font-style: italic;
+}
+
+.outdated-text {
+    -fx-fill: #888888;
+}

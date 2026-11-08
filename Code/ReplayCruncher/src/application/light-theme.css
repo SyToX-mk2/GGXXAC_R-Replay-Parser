@@ -1,0 +1,72 @@
+.root {
+    -fx-base: #f4f4f4;
+    -fx-background: #ffffff;
+    -fx-control-inner-background: #ffffff;
+    -fx-text-fill: #333333;
+    
+    -my-text-primary: #000000;
+    -my-text-secondary: #555555;
+    -my-bg-pane: #c1c1c1;
+    -my-calendar-cell-bg: #e8e8e8;
+}
+
+.activity-calendar-cell {
+	-fx-background-color: #e8e8e8;
+	-fx-background-radius: 2;
+}
+
+.activity-calendar-cell-active:hover {
+    -fx-effect: dropshadow(two-pass-box, -fx-focus-color, 8, 0.6, 0, 0),
+                dropshadow(two-pass-box, -fx-faint-focus-color, 14, 0.3, 0, 0);
+    -fx-cursor: hand;
+}
+
+.pie-chart-container {
+    -fx-background-color: #c1c1c1;
+}
+.pie-slice-win { -fx-pie-color: #15fc05; }
+.pie-slice-win:hover {-fx-effect: dropshadow(two-pass-box, -fx-focus-color, 8, 0.6, 0, 0),
+                				  dropshadow(two-pass-box, -fx-faint-focus-color, 14, 0.3, 0, 0);}
+                				  
+.pie-slice-loss { -fx-pie-color: #fc0505; }
+.pie-slice-loss:hover {-fx-effect: dropshadow(two-pass-box, -fx-focus-color, 8, 0.6, 0, 0),
+                				   dropshadow(two-pass-box, -fx-faint-focus-color, 14, 0.3, 0, 0);}
+
+.player-name {
+    -fx-fill: #000000;
+    -fx-font-weight: bold;
+}
+
+.player-aliases {
+    -fx-fill: #555555;
+}
+
+.player-steamid {
+    -fx-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+}
+
+.matchup-text {
+    -fx-fill: #000000;
+}
+
+.matchup-text-bold {
+    -fx-fill: #000000;
+    -fx-font-weight: bold;
+}
+
+.spec-matchup-text-bold {
+	-fx-font-size: 10pt;
+    -fx-fill: #000000;
+    -fx-font-weight: bold;
+}
+
+.flag-text {
+    -fx-fill: #e22828;
+    -fx-font-style: italic;
+}
+
+.outdated-text {
+    -fx-fill: #888888;
+}

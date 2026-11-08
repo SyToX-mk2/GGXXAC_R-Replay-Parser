@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="787.0" prefWidth="531.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneController">
+   <children>
+      <Button fx:id="btnFindPlayer" layoutX="214.0" layoutY="70.0" mnemonicParsing="false" onAction="#handleFindPlayer" prefHeight="25.0" prefWidth="84.0" text="Find player" />
+      <Button fx:id="btnOrganizeReplays" layoutX="445.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleOrganizeReplays" text="Organize">
+      	<tooltip>
+	        <Tooltip showDelay="200ms" text="Organize replay files into a folder structure, and enter into the database." />
+	    </tooltip>
+	  </Button>
+      <Button fx:id="btnGenerateSteamIDs" layoutX="392.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleGenerateSteamIDs" text="Generate Steam IDs" visible="false" />
+      <ListView fx:id="lstPlayerResults" layoutX="14.0" layoutY="101.0" prefHeight="132.0" prefWidth="494.0" />
+		<TableView fx:id="tblMatchups" layoutX="14.0" layoutY="244.0" prefHeight="496.0" prefWidth="372.0" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="244.0">
+		    <columns>
+		        <TableColumn fx:id="colMainChar" prefWidth="80" text="Your char" />
+		        <TableColumn fx:id="colOppChar" prefWidth="80" text="Opp. char" />
+		        <TableColumn fx:id="colWins" prefWidth="60" text="Wins" />
+		        <TableColumn fx:id="colTotal" prefWidth="60" text="Total" />
+		        <TableColumn fx:id="colWinrate" prefWidth="80" text="Win rate" />
+		    </columns>
+		</TableView>
+		<HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="35.0" spacing="10">
+   		    <DatePicker fx:id="dpFromDate" prefWidth="120" promptText="From" />
+		    <DatePicker fx:id="dpToDate" prefWidth="120" promptText="To" />
+		    <Button fx:id="btnClearDateFilter" onAction="#handleClearDateFilter" prefHeight="25.0" prefWidth="56.0" text="Clear" />
+		</HBox>
+      <MenuBar layoutX="0" layoutY="0" prefHeight="25.0" prefWidth="531.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleSetup" text="Setup" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="View">
+            <items>
+              <RadioMenuItem fx:id="menuThemeLight" mnemonicParsing="false" onAction="#handleTheme" selected="true" text="Light theme" userData="light">
+                <toggleGroup>
+                  <ToggleGroup fx:id="themeToggleGroup" />
+                </toggleGroup>
+              </RadioMenuItem>
+              <RadioMenuItem fx:id="menuThemeDark" mnemonicParsing="false" onAction="#handleTheme" text="Dark theme" toggleGroup="$themeToggleGroup" userData="dark" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Icon size">
+                     <items>
+                        <RadioMenuItem fx:id="menuIconSmall" mnemonicParsing="false" onAction="#handleIconSize" text="Small" userData="16:small">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="iconToggleGroup" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="menuIconMedium" mnemonicParsing="false" onAction="#handleIconSize" text="Medium" toggleGroup="$iconToggleGroup" userData="32:medium" />
+                        <RadioMenuItem fx:id="menuIconLarge" mnemonicParsing="false" onAction="#handleIconSize" text="Large" toggleGroup="$iconToggleGroup" userData="48:large" />
+                     </items>
+                  </Menu>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Database">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleUpdateOutdated" text="Update outdated replays" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleRestoreReplays" text="Restore replays to root" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <PieChart fx:id="pieWinLoss" labelsVisible="false" layoutX="388.0" layoutY="244.0" legendVisible="false" minHeight="130.0" minWidth="130.0" prefHeight="99.0" prefWidth="100.0" />
+      <ToolBar layoutX="1.0" layoutY="747.0" prefHeight="40.0" prefWidth="531.0" AnchorPane.bottomAnchor="0.0">
+         <items>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="519.0" spacing="10.0">
+               <children>
+                  <ProgressBar fx:id="progressBar" prefHeight="18.0" prefWidth="351.0" progress="0.0" visible="false" />
+                  <Label fx:id="labelReplays" prefHeight="17.0" prefWidth="142.0" text="Replays: " visible="false" />
+               </children>
+            </HBox>
+         </items>
+      </ToolBar>
+      <HBox layoutX="14.0" layoutY="70.0" prefHeight="25.0" prefWidth="200.0" spacing="3">
+         <children>
+            <TextField fx:id="txtPlayerSearch" prefHeight="25.0" prefWidth="180.0" promptText="[Search player name]" />
+         </children>
+      </HBox>
+      <VBox layoutX="389.0" layoutY="392.0" prefHeight="200.0" prefWidth="127.0" spacing="10.0">
+         <children>
+            <Button fx:id="btnReplayList" mnemonicParsing="false" onAction="#handleShowReplays" text="Replay list">
+           		<tooltip>
+			    	<Tooltip showDelay="200ms" text="List of all replays with selected player." />
+				</tooltip>
+			</Button>
+            <Button fx:id="btnSpectatedMatches" mnemonicParsing="false" onAction="#handleSpectatedMatches" text="Spectated replays">
+            	<tooltip>
+			    	<Tooltip showDelay="200ms" text="List of all spectated matches." />
+			   </tooltip>
+			</Button>
+            <Button fx:id="btnActivityCalendar" mnemonicParsing="false" onAction="#handleActivityCalendar" text="Activity calendar">
+            <tooltip>
+			    	<Tooltip showDelay="200ms" text="Shows the days you play, amount of matches and win rate." />
+			   </tooltip>
+			</Button>
+            <Button fx:id="btnAllPlayerMatchups" mnemonicParsing="false" onAction="#handleAllPlayerMatchups" text="All player matchups">
+            <tooltip>
+			    	<Tooltip showDelay="200ms" text="List of every player you've played against." />
+			   </tooltip>
+			</Button>
+            <!-- </!><Button fx:id="btnParseReplay" disable="true" mnemonicParsing="false" onAction="#handleParseReplay" text="Parse replay" visible="false" />  -->
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
