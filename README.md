@@ -87,3 +87,4 @@ Since everything is stored on a local database on your PC, the parser returns re
 ## Message from me:
 - Thank you for reading this. I hope you enjoy using the Replay CruncheR. I know the code is bad. I've made, scrapped, and re-made this parser multiple times over the years, working on it sporadically, so the code a bit of a mess. This is just the final iteration.
 - If you happen to find any bugs, don't hesitate to contact me.
+- Finally, if you do end up modifying the parser and distributing your own, I only ask to give credit.
