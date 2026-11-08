@@ -1,9 +1,29 @@
-Hello, this is a replay parser for Guilty Gear XX Accent Core +R.
+# Hello, this is a replay parser for Guilty Gear XX AC +R.
 
 Table of contents:
+- [Quick summery](#quick-summary)
+- [Downloads](#downloads)
 - [How to use](#how-to-use)
 - [Less important stuff](#less-important)
 - [Message from me](#message-from-me)
+
+
+
+## Quick summary:
+
+It organizes your replays into a folder structure, extracts relevant data out of each replay and stores all of it in a locally-created database (**NOTHING** is shared online, all data remains on your PC).
+
+Once the parser finishes organizing your replays, you can browse the data, look up matchups and win rates against specific players, or just characters in general, among other features.
+
+Everything can be filtered by date in order to avoid skewed or misleading results based on old matches.
+
+Since everything is stored on a local database on your PC, the parser returns results instantaneously, regardless of how many matches you have. Another benefit of having a database is that it doesn't rely on temporarily storing the data in your RAM, so it doesn't get lost if you restart your PC.
+
+
+
+
+## Downloads:
+[Download the parser](https://raw.githubusercontent.com/SyToX-mk2/GGXXAC_R-Replay-Parser/main/ReplayCruncheR_v1.0.7z)
 
 ## How to use:
 - Starting the parser for the first time, you will be asked to input your Steam64 ID, and the folder where your game replays are. Once you've done that, click 'Save'.
@@ -12,6 +32,7 @@ Table of contents:
 
 - After that, click the 'Organize' button in the upper-right corner of the window.
 - The parser will start organizing your replays, this may take a couple of minutes if you have a lot of replays like me.
+- Once you've played more matches, you can click 'Organize' again, to store the new matches in the database.
 - A progress bar will show up like so:
 
 ![image](.github/tutorial_images/04m.png)
@@ -63,5 +84,5 @@ Table of contents:
 - But worry not, the parser also keeps track of all the original player names before sanitizing, so if you ever decide to restore the replays to their original root folder, the original player names will be restored as well.
 
 ## Message from me:
-- Thank you for reading this. I hope you enjoy using the Replay CruncheR. I know the code is bad. I've made and re-made this parser multiple times over the years, so the code a bit of a mess. This is just the final iteration.
+- Thank you for reading this. I hope you enjoy using the Replay CruncheR. I know the code is bad. I've made, scrapped, and re-made this parser multiple times over the years, working on it sporadically, so the code a bit of a mess. This is just the final iteration.
 - If you happen to find any bugs, don't hesitate to contact me.
