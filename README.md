@@ -23,7 +23,8 @@ Since everything is stored on a local database on your PC, the parser returns re
 
 
 ## Downloads:
-[Download the parser](https://raw.githubusercontent.com/SyToX-mk2/GGXXAC_R-Replay-Parser/main/ReplayCruncheR_v1.0.7z)
+[Download the parser](https://raw.githubusercontent.com/SyToX-mk2/GGXXAC_R-Replay-Parser/main/ReplayCruncheR_v1.0.7z) (72.4MB)
+- Everything is self-contained, no installation required, all dependencies are packaged inside, hence the hefty file size.
 
 ## How to use:
 - Starting the parser for the first time, you will be asked to input your Steam64 ID, and the folder where your game replays are. Once you've done that, click 'Save'.
@@ -86,3 +87,4 @@ Since everything is stored on a local database on your PC, the parser returns re
 ## Message from me:
 - Thank you for reading this. I hope you enjoy using the Replay CruncheR. I know the code is bad. I've made, scrapped, and re-made this parser multiple times over the years, working on it sporadically, so the code a bit of a mess. This is just the final iteration.
 - If you happen to find any bugs, don't hesitate to contact me.
+- Finally, if you do end up modifying the parser and distributing your own, I only ask to give credit.
